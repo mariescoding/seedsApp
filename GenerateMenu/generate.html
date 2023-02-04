@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>seeds</title>
+   <meta charset="utf-8" />
+   <meta
+     name="viewport" content ="width=device-width, initial-scale=1, viewport-fit=cover"
+   />
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+   <link
+     href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"
+   />
+   <link
+     href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+     rel="stylesheet"
+   />
+ </head>
+ <script src="https://www.w3schools.com/lib/w3.js"></script>
+ <body>
+   <div id="" class="w3-bar w3-green">
+     <span class="material-icons-outlined">grass</span>
+     <span class="w3-bar-item">seeds</span>
+     <a
+       href="file:///Users/mariemuramatsu/Desktop/IA/CS%20ai-%20seeds/firebase/account.html"
+       class="w3-bar-item w3-button w3-green w3-right"
+       ><span class="material-icons-outlined">account_circle</span></a
+     >
+     <span class="w3-bar-item w3-right">calender</span>
+     <a
+       href="file:///Users/mariemuramatsu/Desktop/IA/CS%20ai-%20seeds/firebase/calender.html"
+       class="w3-bar-item w3-button w3-green w3-right"
+       ><span class="material-icons-outlined">calender_today</span></a
+     >
+     <span class="w3-bar-item w3-right">menu</span>
+     <a
+       href="file:///Users/mariemuramatsu/Desktop/IA/CS%20ai-%20seeds/firebase/browseMenu.html#"
+       class="w3-bar-item w3-button w3-green w3-right"
+       ><span class="material-icons-outlined">kitchen</span></a
+     >
+     <span class="w3-bar-item w3-right">home</span>
+     <a
+       href="file:///Users/mariemuramatsu/Desktop/IA/CS%20ai-%20seeds/firebase/mainMenu.html"
+       class="w3-bar-item w3-button w3-green w3-right"
+       ><span class="material-icons-outlined">home</span></a
+     >
+   </div>
+   <div
+     class="w3-container w3-center w3-topbar w3-bottombar w3-border-green w3-margin"
+   >
+     <h1><b>choose tonight's menu </b></h1>
+   </div>
+   <div class="w3-row-padding w3-container w3-center">
+     <div class="w3-col w3-center w3-wide w3-padding-32">
+       <h5><b>who's eating? </b></h5>
+       <br />
+       <input
+         class="w3-check" type="checkbox" id="mizuhoB" onclick="mizuhoFunc(mizuhoB)"
+       /><label> Mizuho </label>
+       <input
+         class="w3-check" type="checkbox" id="marieB"  onclick="marieFunc(marieB)"
+       /><label> Marie </label>
+       <input
+         class="w3-check" type="checkbox"id="yurieB"onclick="yurieFunc(yurieB)"
+       /><label> Yurie </label>
+       <input
+         class="w3-check"type="checkbox"id="ryuB"onclick="ryuFunc(ryuB)"
+       /><label> Ryu </label>
+        <h5 class="w3-text-red" id="peopleError"></h5>
+     </div>
+   </div>
+   <script>
+     function marieFunc(boxName) {
+       var index = inputPeople.indexOf("Marie");
+       if (boxName.checked) {
+         inputPeople.push("Marie");
+         console.log(inputPeople);
+       } else {
+         if (index !== -1) {
+           inputPeople.splice(index, 1);
+           console.log(inputPeople);
+         }
+       }
+     }
+     function yurieFunc(boxName) {
+       var index = inputPeople.indexOf("Yurie");
+       if (boxName.checked) {
+         inputPeople.push("Yurie");
+         console.log(inputPeople);
+       } else {
+         if (index !== -1) {
+           inputPeople.splice(index, 1);
+           console.log(inputPeople);
+         }
+       }
+     }
+     function mizuhoFunc(boxName) {
+       var index = inputPeople.indexOf("Mizuho");
+       if (boxName.checked) {
+         inputPeople.push("Mizuho");
+         console.log(inputPeople);
+       } else {
+         if (index !== -1) {
+           inputPeople.splice(index, 1);
+           console.log(inputPeople);
+         } } }
+     function ryuFunc(boxName) {
+       var index = inputPeople.indexOf("Ryu");
+       if (boxName.checked) {
+         inputPeople.push("Ryu");
+         console.log(inputPeople);
+       } else {
+         if (index !== -1) {
+           inputPeople.splice(index, 1);
+           console.log(inputPeople);
+         }  } }
+   </script>
+   <div class="w3-row-padding w3-container w3-center">
+     <div class="w3-col s4 w3-section w3-center">
+       <h5><b>choose from directory : </b></h5>
+       <br />
+       <div class="w3-dropdown-click w3-center">
+         <button class="w3-button w3-black" onclick="myFunction()">
+           menu name
+         </button>
+         <div
+           class="w3-dropdown-content w3-bar-block w3-card w3-light-grey" id="menuOptions"
+         >
+           <input
+             class="w3-input w3-padding"type="text" placeholder="Search.."id="menuSearch"onkeyup="filterFunction()"
+           />
+         </div>
+       </div>
+     </div>
+     <div class="w3-col s4 w3-section w3-center">
+       <div class="w3-display-middle">
+         <br /><br />
+         <h4>or</h4>
+       </div>
+     </div>
+     <div class="w3-col s4 w3-section w3-center">
+       <h5><b>generate : </b></h5>
+       <br />
+       <div class="w3-padding-16">
+         <input
+           id="drinkingBox" class="w3-check"type="checkbox"onclick="drinkBfunc(drinkingBox)"
+         /><label> drinking </label>
+       </div>
+       <script>
+         function drinkBfunc(boxName) {
+           if (boxName.checked) {
+             isDrinking = true;
+           } else {
+             isDrinking = false;
+           }
+         }
+         function salmonFunc(boxName) {
+           var index = inputIng.indexOf("salmon");
+           if (boxName.checked) {
+             inputIng.push("salmon");
+           } else {
+             if (index !== -1) {
+               inputIng.splice(index, 1);
+             }   }  }
+         function chickenFunc(boxName) {
+           var index = inputIng.indexOf("chicken");
+           if (boxName.checked) {
+             inputIng.push("chicken");
+           } else {
+             if (index !== -1) {
+               inputIng.splice(index, 1);
+             } }  }
+         function porkFunc(boxName) {
+           var index = inputIng.indexOf("pork");
+           if (boxName.checked) {
+             inputIng.push("pork");
+           } else {
+             if (index !== -1) {
+               inputIng.splice(index, 1);
+             } }  }
+          } }
+       </script>
+       <div class="w3-padding-16">
+         <input
+           id="salmonB"class="w3-check"type="checkbox"onclick="salmonFunc(salmonB)"
+         /><label> salmon </label>
+         <input
+           id="chickenB" class="w3-check" type="checkbox" onclick="chickenFunc(chickenB)"
+         /><label> chicken </label>
+         <input
+           id="porkB" class="w3-check" type="checkbox" onclick="porkFunc(porkB)"
+         /><label> pork </label>
+         <input
+           id="beefB" class="w3-check" type="checkbox" onclick="beefFunc(beefB)"
+         /><label> beef </label>
+         <input
+           id="shrimpB" class="w3-check" type="checkbox" onclick="shrimpFunc(shrimpB)"
+         /><label> shrimp </label>
+       </div>
+        <h5 class="w3-text-red" id="ingError"> </h5>
+     </div>
+     <div class="w3-center w3-padding-64 w3-display-bottommiddle">
+       <button
+         class="w3-button w3-padding-large w3-green"
+         id="chooseButton"
+         onclick="chooseFunc()"
+       >chooose
+       </button>
+     </div>
+   </div>
+   <script src="generateMenu.js">
+     readMenu();
+   </script>
+ </body>
+</html>
