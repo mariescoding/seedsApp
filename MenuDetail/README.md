@@ -1,0 +1,1 @@
+# displays details about menu when its button is pressed form the BrowseMenu page 
