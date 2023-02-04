@@ -1,1 +1,1 @@
-# displays details about menu when its button is pressed form the BrowseMenu page 
+# Menu Detail: displays details about the menu when its button is pressed form the BrowseMenu page 
