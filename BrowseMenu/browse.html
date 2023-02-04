@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>seeds</title>
+   <meta charset="utf-8" />
+   <meta name="viewport"  content="width=device-width, initial-scale=1, viewport-fit=cover"
+   />
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+   <link
+     href="https://fonts.googleapis.com/icon?family=Material+Icons"
+     rel="stylesheet"
+   />
+   <link
+     href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+     rel="stylesheet"
+   />
+   <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
+   <link
+     type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css"
+   />
+ </head>
+ <script src="https://www.w3schools.com/lib/w3.js"></script>
+ <body>
+   <!--header-->
+   <script 
+src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+
+   <div class="w3-bar w3-green">
+     <span class="material-icons-outlined">grass</span>
+     <span class="w3-bar-item">seeds</span>
+     <a
+       href="file:///Users/mariemuramatsu/Desktop/IA/CS%20ai-%20seeds/firebase/account.html"
+       class="w3-bar-item w3-button w3-green w3-right"
+       ><span class="material-icons-outlined">account_circle</span></a
+     >
+     <span class="w3-bar-item w3-right">calender</span>
+     <a
+       href="file:///Users/mariemuramatsu/Desktop/IA/CS%20ai-%20seeds/firebase/calender.html"
+       class="w3-bar-item w3-button w3-green w3-right"
+       ><span class="material-icons-outlined">calender_today</span></a
+     >
+     <span class="w3-bar-item w3-right">menu</span>
+     <a
+       href="file:///Users/mariemuramatsu/Desktop/IA/CS%20ai-%20seeds/firebase/browseMenu.html#"
+       class="w3-bar-item w3-button w3-green w3-right"
+       ><span class="material-icons-outlined">kitchen</span></a
+     >
+     <span class="w3-bar-item w3-right">home</span>
+     <a
+       href="file:///Users/mariemuramatsu/Desktop/IA/CS%20ai-%20seeds/webpages/mainMenu.html#"
+       class="w3-bar-item w3-button w3-green w3-right"
+       ><span class="material-icons-outlined">home</span></a
+     >
+   </div>
+   <div class="w3-container w3-center w3-wide">
+     <h1>
+       <big> <b>MENUS</b></big>
+     </h1>
+   </div>
+   <!--filtering -->
+   <div class="w3-row-padding w3-container w3-center">
+     <div class="w3-col s4 w3-section w3-center"></div>
+     <div class="w3-col s4 w3-section w3-center">
+       <div>
+         <h5>search by name</h5>
+         <input
+           id="menuInput"
+           class="w3-input w3-border w3-round-large"
+           type="text"
+         />
+       </div>
+       <div>
+         <h5>ingredients</h5>
+         <select id="ingredientList" class="w3-select" name="option">
+           <option value="" disabled selected></option>
+           <option id="fish" value="1">fish</option>
+           <option id="chicken" value="2">chicken</option>
+           <option id="pork " value="3">pork</option>
+           <option id="prawn" value="4">prawn</option>
+           <option id="beef" value="5">beef</option>
+         </select>
+       </div>
+       <div>
+         <h5>menu type</h5>
+         <select id="cuisineList" class="w3-select" name="option">
+           <option id="" value="" disabled selected></option>
+           <option id="japanese" value="1">special</option>
+           <option id="italian" value="2">japanese</option>
+           <option id="chinese" value="3">fish</option>
+           <option id="western" value="4">don</option>
+         </select>
+       </div>
+       <button id="menuSearch" class="w3-button">
+         <span class="material-icons-outlined">search</span>
+       </button>
+     </div>
+     <!--soring-->
+     <div class="w3-col s4 w3-section w3-center">
+       <div class="w3-dropdown-hover w3-right">
+         <button id="sortButton" class="w3-button">
+           sort by <span class="material-icons-outlined">arrow_drop_down</span>
+         </button>
+         <div
+           id="sortOptions"
+           class="w3-dropdown-content w3-bar-block w3-grey"
+         >
+           <a id="highRate" class="w3-bar-item w3-button">highest rating</a>
+           <a id="lowRate" href="#" class="w3-bar-item w3-button"
+             >lowest rating</a
+           >
+           <a id="alph" href="#" class="w3-bar-item w3-button"
+             >alphabet order</a
+           >
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="w3-center">
+     <h5 id="message"></h5>
+   <div>
+   <div id="menuGallery" class="w3-container w3-center">
+     <button id="button"></button>
+   </div>
+   <script>
+     var firebaseConfig = {
+       apiKey: "AIzaSyDfhL3b-6WK552H6jIhZ3RLQ6zqoanlKK0",
+       authDomain: "seeds-111ce.firebaseapp.com",
+       databaseURL:
+         "https://seeds-111ce-default-rtdb.asia-southeast1.firebasedatabase.app",
+       projectId: "seeds-111ce",
+       storageBucket: "seeds-111ce.appspot.com",
+       messagingSenderId: "735126432647",
+       appId: "1:735126432647:web:4f867b267fa7ddc3b20122",
+     };
+     firebase.initializeApp(firebaseConfig);
+   </script>
+   <script src="browseMenu.js">
+     readMenu();
+   </script>
+ </body>
+ </html>
